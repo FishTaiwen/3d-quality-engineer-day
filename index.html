@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#203b35">
+ <meta name="description" content="品保工程師的一天 3D。走進虛構液冷機櫃工廠，三條隨機主線與一條過保大品牌的隱藏主線。">
+ <title>品保工程師的一天 3D · 第零製造所</title><link rel="stylesheet" href="css/style.css">
+ <script defer src="js/data.js"></script><script defer src="js/engine.js"></script><script defer src="js/navigation.js"></script><script type="module" src="js/app.js"></script>
+</head>
+<body class="preflight">
+ <canvas id="scene" aria-label="可探索的 3D 液冷機櫃工廠"></canvas><div id="labels" aria-label="站點位置"></div>
+ <header class="topbar"><div class="brand"><span class="brand-logo">Q<span>3</span></span><div><b>第零製造所</b><small>QUALITY ENGINEER / DAY 01</small></div></div><div class="shift"><b id="clock">08:30</b><span id="shift-tag">日班 · 系統在線</span></div><nav><button id="help" aria-label="操作說明">?</button><button id="archive" aria-label="結局收藏">▣</button><button id="restart" aria-label="重新分配工作日">↻</button></nav></header>
+ <section id="stats" class="stats" aria-label="品質、壓力、信用與時間"></section>
+ <aside class="mission-panel"><div class="panel-heading"><span id="route-code">WORK ORDER</span><button id="toggle-mission" aria-label="展開或收合任務">−</button></div><div id="mission-content"><p class="route-name" id="route-name"></p><div class="mission-title"><span class="mission-mark">!</span><h1 id="mission-title"></h1></div><p id="mission-description"></p><div class="mission-destination"><span id="destination"></span><b id="mission-progress"></b></div><button class="primary-button" id="guide">帶我去 →</button><div id="paused-case" hidden></div><div class="role-row"><label for="role-select">當前職能</label><select id="role-select"></select></div><div id="role-status" class="small"></div><div class="outfit"><span id="outfit-icon">▥</span><div><b id="outfit-label">工作服</b><small id="outfit-count">換裝 0 次</small></div><span id="save-status">已存檔</span></div></div></aside>
+ <aside class="explore-panel"><button id="toggle-explore">◇ 支線與地圖 <span>展開</span></button><div id="explore-content" hidden><canvas id="minimap" width="260" height="176" aria-label="工廠小地圖"></canvas><div id="side-list"></div><button id="logs">≡ 查看交接紀錄</button></div></aside>
+ <div class="world-note" id="world-note"><span>第零製造所 / R-00</span><b>你的職稱只有一個，工作內容不是。</b></div>
+ <div class="controls"><div class="keyboard-hint"><kbd>W A S D</kbd> 移動 <span>／ 點地板尋路</span><kbd>E</kbd> 互動</div><div class="nearby"><span id="nearby-label">走近站點與窗口</span><button id="interact" disabled><kbd>E</kbd> 互動</button></div></div>
+ <div id="dpad" class="dpad" aria-label="移動方向"><button data-key="w" aria-label="向上移動">▲</button><button data-key="a" aria-label="向左移動">◀</button><button data-key="s" aria-label="向下移動">▼</button><button data-key="d" aria-label="向右移動">▶</button></div>
+ <div id="intro" class="intro"><section class="intro-card"><span class="eyebrow">一個很普通的工作日 / 3D EDITION</span><h2>品保工程師的<br>一天<span>。</span></h2><p class="tagline">白天守品質，晚上守群組。<br>這次，你得親自走到現場。</p><div class="intro-routes"><div><b>01</b><span>消失的序號</span></div><div><b>02</b><span>今天一定要出貨</span></div><div><b>03</b><span>客戶說漏了</span></div><div class="secret"><b>??</b><span>某個 CQE 案件，可能接管你的一天。</span></div></div><p class="intro-notice">初始職能 QE · 每輪隨機派任一條主線<br>液冷管制區需要刷卡、更換無塵服。</p><button id="start" class="primary-button" disabled>正在準備工廠…</button><p id="load-message">3D 引擎與場景載入中</p><div class="intro-controls"><span>WASD／方向鍵／點地板</span><span>靠近按 E 互動</span></div><p class="disclaimer">全部場景、組織、品牌、人物與數據皆為虛構。非實際檢驗或作業指示。</p></section><div class="intro-caption"><span>MANIFOLD / QD / SERVER RACK</span><b>人力配置：你。</b></div></div>
+ <dialog id="dialog"><div class="dialog-head"><div><span id="dialog-meta"></span><h2 id="dialog-title"></h2></div><button id="close-dialog" aria-label="關閉對話">×</button></div><div id="dialog-content"></div></dialog>
+ <div id="toast" class="toast" role="status"></div><div id="wardrobe-flash" aria-hidden="true"><span>更衣程序完成</span><b>無塵服已配發</b><small>職務與待辦保留。</small></div>
+ <noscript>請啟用 JavaScript 以遊玩。</noscript>
+ <script>window.addEventListener('error',function(){var el=document.getElementById('load-message');if(el&&document.getElementById('intro').hidden!==true)el.textContent='若無法載入，請使用網頁伺服器或 GitHub Pages 開啟，並確認瀏覽器支援 WebGL 2。';});</script>
+</body>
+</html>
